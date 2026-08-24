@@ -297,8 +297,7 @@
   .reply-options{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;z-index:1;}
   .reply-btn{border:1px solid var(--glass-border);border-radius:999px;padding:.9rem 1.5rem;cursor:pointer;font-family:inherit;font-weight:500;transition:transform .25s ease,box-shadow .25s ease, filter .25s ease, border-color .25s ease;background:rgba(255,255,255,.7);color:var(--wine);box-shadow:0 10px 24px rgba(109,44,68,.12);}
   .reply-btn:hover{transform:translateY(-4px) rotate(-1deg);filter:saturate(1.1);border-color:rgba(109,44,68,.25);box-shadow:0 14px 30px rgba(109,44,68,.16);}
-  #thanksBtn{background:#fff;color:var(--wine);position:relative;}
-  #thanksBtn.running{position:absolute;z-index:10;transition:left .35s cubic-bezier(.2,.9,.3,1),top .35s cubic-bezier(.2,.9,.3,1),transform .2s ease;transform:scale(1.04);}
+  #thanksBtn{background:#fff;color:var(--wine);position:relative;display:inline-block;transition:transform .2s ease, box-shadow .2s ease;will-change:transform;}
   #loveBtn{background:linear-gradient(120deg,var(--wine),#874261);color:#fff;}
   .funny-result{min-height:2.2rem;margin-top:1.6rem;font-family:'Cormorant Garamond',serif;font-size:1.25rem;color:var(--wine);position:relative;z-index:1;}
   .mini-tag{display:inline-block;padding:.45rem .8rem;border-radius:999px;background:rgba(224,138,168,.12);color:var(--rose-deep);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;box-shadow: inset 0 1px 0 rgba(255,255,255,.7);animation: tagGlow 3s ease-in-out infinite;}
@@ -548,6 +547,8 @@
       <button class="reply-btn" id="loveBtn">Love You 😘</button>
     </div>
     <div class="funny-result" id="funnyResult">Choose wisely... the internet is watching 👀</div>
+    <div class="mini-tag" id="smileMeter">Smile meter: warming up ✨</div>
+    <div class="mini-tag" id="buttonReport">Button report: Thank You is currently pretending to be busy 📝</div>
   </div>
 </section>
 
@@ -791,36 +792,42 @@
   document.getElementById('toReply').onclick = () => goTo('s-songs','s-reply');
    const thanksBtn = document.getElementById('thanksBtn');
    const funnyResult = document.getElementById('funnyResult');
+   const smileMeter = document.getElementById('smileMeter');
+  const buttonReport = document.getElementById('buttonReport');
    let thanksRuns = 0;
+
    function runAwayThanks(){
      thanksRuns++;
-     const rect = thanksBtn.getBoundingClientRect();
-     const card = thanksBtn.closest('.reply-card');
-     const cardRect = card.getBoundingClientRect();
-
-     if(!thanksBtn.classList.contains('running')){
-       thanksBtn.classList.add('running');
-       thanksBtn.style.width = rect.width + 'px';
-       thanksBtn.style.left = '0px';
-       thanksBtn.style.top = '0px';
-     }
-
-     const pad = 18;
-     const maxX = Math.max(pad, cardRect.width - rect.width - pad * 2);
-     const maxY = Math.max(pad, cardRect.height - rect.height - pad * 2);
-     const x = Math.min(Math.max(pad + Math.random() * (maxX - pad), pad), maxX);
-     const y = Math.min(Math.max(pad + Math.random() * (maxY - pad), pad), maxY);
-
-     thanksBtn.style.left = x + 'px';
-     thanksBtn.style.top = y + 'px';
+    const maxShiftX = 62;
+    const maxShiftY = 22;
+    const x = (Math.random() - 0.5) * maxShiftX * 2;
+    const y = (Math.random() - 0.5) * maxShiftY * 2;
+     thanksBtn.style.transform = `translate(${x}px, ${y}px)`;
 
      const funny = [
       'Areey 😄 Thank You button bhi thoda shy hai!',
       'Lagta hai Thank You button apni jagah se thoda sharma raha hai 😂',
       'Thoda premium drama, thoda cute chaos 😌',
-      'Bilkul okay, Love You option hi sabse strong hai 💖'
+      'Bilkul okay, Love You option hi sabse strong hai 💖',
+      'Thank You ne bola: pehle ek smile, phir baat karenge 😄',
+      'Button ka polite response: “Main thoda idhar ho jaun?” 😂',
+      'Aapki smile ke saamne yeh button bhi nervous ho gaya ✨',
+      'Final hint: Love You button bilkul seedha-saadha hai 😌💖',
+      'Thank You button ne attendance lagayi aur phir chhutti le li 😂',
+      'Breaking news: button ne aapki smile notice kar li hai 📰😊',
+      'Itna cute pressure? Button ko bhi thoda break chahiye 😄',
+      'Official result: aap jeet rahi hain, button bas acting kar raha hai 🏆'
     ];
     funnyResult.textContent = funny[Math.min(thanksRuns - 1, funny.length - 1)];
+    smileMeter.textContent = `Smile meter: ${Math.min(thanksRuns * 13, 99)}% activated 😊`;
+    const report = [
+      'Button report: Thank You is currently pretending to be busy 📝',
+      'Button report: polite escape successfully completed 🏃',
+      'Button report: smile detected, confidence reduced 😄',
+      'Button report: Love You button has been recommended 💖',
+      'Button report: aapki strategy is working perfectly 😂'
+    ];
+    buttonReport.textContent = report[Math.min(thanksRuns - 1, report.length - 1)];
    }
    thanksBtn.addEventListener('mouseenter', runAwayThanks);
    thanksBtn.addEventListener('pointerdown', (e)=>{ e.preventDefault(); runAwayThanks(); });
