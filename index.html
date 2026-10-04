@@ -5,28 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>happy day 🎂</title>
 
-<!--
-  ================= CUSTOMIZE KAISE KAREN =================
-  1. Ctrl+F "PARTNER_NAME" -> unka naam likhein
-  2. Ctrl+F "YOUR_NAME" -> apna naam likhein
-  3. Ctrl+F "00 . 00 . 0000" -> unki birth date daalein
-  4. "ABOUT TEXT" me unke baare me kuch pyaara likhein
-  5. Photos: sirf background slideshow aur grid ke flip-cards me
-     images/r1.jpeg se r13.jpeg use hoti hain — inhe apne folder
-     me rakhein, name match karke.
-  6. Pehla screen ek GIFT BOX hai — usko tap karte hi khulta hai aur
-     poori journey shuru ho jaati hai. Isi tap par background music
-     bhi apne aap shuru ho jaati hai.
-  7. BACKGROUND MUSIC: <audio id="bgMusic"> ke andar
-     <source src="background-music.mp3" type="audio/mpeg"> daal dein
-     (file website ke folder me rakhein). Pehle button click par
-     yeh apne aap bajne lagegi. File na do to soft ambient tune
-     generate hoke bajegi.
-  8. SPECIAL SONGS: <audio id="song1">/<audio id="song2"> me apni
-     pasandida gaano ki mp3 file ka <source src="..."> daalein.
-  ===========================================================
--->
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500,600;1,500&family=Jost:wght@300;400;500&family=Dancing+Script:wght@600;700&display=swap');
 
@@ -337,7 +315,7 @@
 </div>
 <button id="backButton" type="button" aria-label="Peeche jaayein" title="Peeche jaayein">←</button>
 
-<audio id="bgMusic" loop><source src="instrument.mp3" type="audio/mpeg"></audio>
+<audio id="bgMusic" loop><source src="songs/instrument.mp3" type="audio/mpeg"></audio>
 
 <!-- ============ SCENE 0: GIFT BOX OPENER ============ -->
 <section class="scene" id="s-gift">
@@ -426,7 +404,7 @@
       <path d="M100 122 C 88 118, 90 104, 100 100 C 110 104, 112 118, 100 122 Z" fill="#fbc7d4"/>
     </svg>
   </button>
-  <p class="hint">Rose ko touch karke neeche ki chitthi kholein</p>
+  <p class="hint">Rose ko touch karke neeche ki chitthi kholiye</p>
 
   <div class="letter-wrap" id="letterWrap">
     <div class="glass-card">
@@ -460,55 +438,55 @@
        e.g. style="background-image:url('photo1.jpg')" -->
   <div class="grid">
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r1.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r1.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">❤️</span><b>HAPPY</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r2.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r2.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">🌹</span><b>BIRTHDAY</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r3.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r3.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">✨</span><b>jii</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r4.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r4.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">💖</span><b>Sweet</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r5.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r5.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">🌙</span><b>Moment</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r6.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r6.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">❤️</span><b>Memory</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r7.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r7.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">🌹</span><b>Special</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r8.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r8.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">✨</span><b>Beautiful</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r9.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r9.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">😊</span><b>Smile</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r10.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r10.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">🌸</span><b>Joy</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r11.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r11.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">🙏</span><b>Blessed</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r12.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r12.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">🥂</span><b>Cheers</b></div>
     </div></div>
     <div class="grid-tile"><div class="flip-inner">
-      <div class="flip-face flip-front" style="background-image:url('r13.jpeg')"></div>
+      <div class="flip-face flip-front" style="background-image:url('images/r13.jpeg')"></div>
       <div class="flip-face flip-back"><span class="emoji">💫</span><b>Forever</b></div>
     </div></div>
   </div>
@@ -537,10 +515,10 @@
     <div class="song-info"><b>for you</b><span>Song 4</span></div>
   </div>
 
-  <audio id="song1" loop><source src="birthday-song.mp3" type="audio/mpeg"></audio>
-  <audio id="song2" loop><source src="b2.mp3" type="audio/mpeg"></audio>
-  <audio id="song3" loop><source src="s3.mp3" type="audio/mpeg"></audio>
-  <audio id="song4" loop><source src="s4.mp3" type="audio/mpeg"></audio>
+  <audio id="song1" loop><source src="songs/A1.ogg" type="audio/mpeg"></audio>
+  <audio id="song2" loop><source src="songs/b2.mp3" type="audio/mpeg"></audio>
+  <audio id="song3" loop><source src="songs/A2.ogg" type="audio/mpeg"></audio>
+  <audio id="song4" loop><source src="songs/s4.mp3" type="audio/mpeg"></audio>
 
   <button class="btn" id="toReply">Ek Last Surprise ✨</button>
 </section>
@@ -677,9 +655,9 @@
 <script>
   /* ---------- rotating background slideshow (all 13 photos) ---------- */
   const bgSlideshow = document.getElementById('bgSlideshow');
-  const bgPhotos = ['r1.jpeg','r2.jpeg','r3.jpeg','r4.jpeg','r5.jpeg',
-                     'r6.jpeg','r7.jpeg','r8.jpeg','r9.jpeg','r10.jpeg',
-                     'r11.jpeg','r12.jpeg','r13.jpeg'];
+  const bgPhotos = ['images/r1.jpeg','images/r2.jpeg','images/r3.jpeg','images/r4.jpeg','images/r5.jpeg',
+                     'images/r6.jpeg','imagesr7.jpeg','images/r8.jpeg','images/r9.jpeg','images/r10.jpeg',
+                     'images/r11.jpeg','images/r12.jpeg','images/r13.jpeg'];
   bgPhotos.forEach((src, i) => {
     const d = document.createElement('div');
     d.className = 'bg-slide' + (i===0 ? ' active' : '');
